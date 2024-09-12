@@ -1,3 +1,5 @@
+import { storePost } from '@/lib/posts';
+
 export default function NewPostPage() {
   //server action
   async function createPost(formData) {
@@ -6,7 +8,12 @@ export default function NewPostPage() {
     const image = formData.get('image');
     const content = formData.get('content');
 
-    
+    await storePost({
+      imageUrl: '',
+      title,
+      content,
+      userId: 1,
+    });
   }
   return (
     <>
