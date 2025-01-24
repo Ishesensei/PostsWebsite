@@ -18,7 +18,7 @@ export default async function NewPostPage() {
     if (!content || content.trim().length === 0) {
       errors.push('Content is required.');
     }
-    if (!image) {
+    if (!image || image.size === 0) {
       errors.push('image is required.');
     }
     if (errors.length > 0) {
